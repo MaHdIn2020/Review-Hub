@@ -6,7 +6,7 @@ import TitleUpdater from '../pages/Shared/TitleUpdater';
 
 const RootLayout = () => {
     return (
-        <div className='max-w-7xl mx-auto'>
+        <div className='mx-auto'>
             <TitleUpdater></TitleUpdater>
             <Navbar></Navbar>
             <Outlet></Outlet>

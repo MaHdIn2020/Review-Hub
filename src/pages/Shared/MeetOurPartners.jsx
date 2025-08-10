@@ -31,7 +31,7 @@ const partners = [
 
 const MeetOurPartners = () => {
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section className="py-20 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ const MeetOurPartners = () => {
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight text-gray-900 dark:text-gray-100">
             Meet Our Trusted Partners
           </h2>
-          <p className="max-w-3xl mx-auto text-gray-600 dark:text-gray-300 text-lg">
+          <p className="max-w-3xl mx-auto text-gray-600 dark:text-gray-100 text-lg">
             We collaborate with industry leaders who share our commitment to excellence and innovation.
           </p>
         </motion.div>
@@ -60,7 +60,7 @@ const MeetOurPartners = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
               viewport={{ once: true, margin: "-50px" }}
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col hover:shadow-xl transition-shadow duration-300"
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col hover:shadow-xl transition-shadow duration-300 text-gray-900 dark:text-gray-100"
               role="group"
               aria-label={`Partner: ${partner.name}`}
             >
@@ -75,7 +75,7 @@ const MeetOurPartners = () => {
               <h3 className="text-xl font-semibold text-center mb-4 text-gray-900 dark:text-gray-100">
                 {partner.name}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-center flex-grow">{partner.description}</p>
+              <p className="text-gray-600 dark:text-gray-100 text-center flex-grow">{partner.description}</p>
             </motion.article>
           ))}
         </div>
@@ -95,15 +95,15 @@ const MeetOurPartners = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div>
               <h4 className="text-4xl font-bold text-primary">25+</h4>
-              <p className="text-gray-600 dark:text-gray-300 mt-2">Active Partnerships</p>
+              <p className="text-gray-600 dark:text-gray-100 mt-2">Active Partnerships</p>
             </div>
             <div>
               <h4 className="text-4xl font-bold text-primary">10</h4>
-              <p className="text-gray-600 dark:text-gray-300 mt-2">Years of Collaboration</p>
+              <p className="text-gray-600 dark:text-gray-100 mt-2">Years of Collaboration</p>
             </div>
             <div>
               <h4 className="text-4xl font-bold text-primary">15+</h4>
-              <p className="text-gray-600 dark:text-gray-300 mt-2">Industries Served</p>
+              <p className="text-gray-600 dark:text-gray-100 mt-2">Industries Served</p>
             </div>
           </div>
         </motion.div>

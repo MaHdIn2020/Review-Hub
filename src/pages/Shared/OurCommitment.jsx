@@ -28,7 +28,7 @@ const commitments = [
 
 const OurCommitment = () => {
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-900">
+    <section className="py-16 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -45,11 +45,11 @@ const OurCommitment = () => {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: id * 0.2 }}
-              className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md"
+              className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md text-gray-900 dark:text-gray-100"
             >
               <div>{icon}</div>
               <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">{title}</h3>
-              <p className="text-gray-700 dark:text-gray-200">{description}</p>
+              <p className="text-gray-700 dark:text-gray-100">{description}</p>
             </motion.div>
           ))}
         </div>

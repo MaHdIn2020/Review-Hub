@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router';
+import LoadingPage from './LoadingPage';
 
 const AllServices = () => {
   const [services, setServices] = useState([]);
@@ -59,7 +60,7 @@ const AllServices = () => {
       </div>
 
       {loading ? (
-        <p className="text-center text-lg">Loading...</p>
+        <LoadingPage />
       ) : (
         <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {services.length > 0 ? (

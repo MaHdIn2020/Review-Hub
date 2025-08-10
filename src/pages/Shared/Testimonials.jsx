@@ -30,7 +30,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section className="py-20 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,7 +42,7 @@ const Testimonials = () => {
           <h2 className="text-4xl font-extrabold mb-4 text-gray-900 dark:text-gray-100">
             Trusted by Thousands
           </h2>
-          <p className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-300">
+          <p className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-100">
             Hear what our community says about their service experiences
           </p>
         </motion.div>
@@ -55,12 +55,12 @@ const Testimonials = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ type: 'spring', stiffness: 80, damping: 15 }}
               viewport={{ once: true }}
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 flex flex-col"
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 flex flex-col text-gray-900 dark:text-gray-100"
               role="group"
               aria-label={`Testimonial from ${testimonial.name}`}
             >
               <FaQuoteLeft className="text-primary text-4xl opacity-20 mb-6" />
-              <p className="italic text-gray-700 dark:text-gray-200 mb-8 flex-grow">{testimonial.content}</p>
+              <p className="italic text-gray-700 dark:text-gray-100 mb-8 flex-grow">{testimonial.content}</p>
               <div className="flex items-center gap-4 mt-auto">
                 <div className="avatar placeholder">
                   <div className="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center text-lg font-semibold">
@@ -69,7 +69,7 @@ const Testimonials = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-gray-100">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-500 dark:text-gray-300">{testimonial.role}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-100">{testimonial.role}</p>
                   <div className="flex mt-1" aria-label={`Rating: ${testimonial.rating} out of 5 stars`}>
                     {[...Array(5)].map((_, i) => (
                       <svg

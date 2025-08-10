@@ -1,35 +1,4 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-/* Global light mode background and text */
-body {
-  background-color: #fff;
-  color: #18181b;
-}
-
-/* Custom dark mode styles */
-.dark {
-  background-color: #18181b;
-  color: #f3f4f6;
-}
-
-.dark, .dark * {
-  color: #f3f4f6 !important;
-  border-color: #23272f;
-}
-
-.dark .bg-white {
-  background-color: #23272f !important;
-}
-
-.dark .btn-primary {
-  background-color: #2563eb !important;
-  color: #f3f4f6 !important;
-}
-
-.dark .btn-outline.btn-primary {
-  border-color: #2563eb !important;
-  color: #f3f4f6 !important;
-}
-
-/* Remove other dark mode text color overrides for consistency */
+/* Remove global body/.dark color overrides. Use Tailwind classes in components. */

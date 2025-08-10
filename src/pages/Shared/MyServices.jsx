@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthContext';
 import Swal from 'sweetalert2';
 import { FaEdit, FaTrash, FaPlus, FaEye, FaSearch, FaFilter } from 'react-icons/fa';
+import { useNavigate } from 'react-router';
 
 const MyServices = () => {
   const { user } = useContext(AuthContext);
@@ -11,6 +12,7 @@ const MyServices = () => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('All');
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('https://review-hub-server-xi.vercel.app/services')
@@ -111,7 +113,7 @@ const MyServices = () => {
               </p>
             </div>
             <div className="mt-4 sm:mt-0">
-              <button className="btn btn-primary btn-lg gap-2 shadow-lg hover:shadow-xl transition-all duration-300">
+              <button className="btn btn-primary btn-lg gap-2 shadow-lg hover:shadow-xl transition-all duration-300" onClick={() => navigate('/addservice')}>
                 <FaPlus className="text-lg" />
                 Add New Service
               </button>

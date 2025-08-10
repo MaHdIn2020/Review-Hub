@@ -56,44 +56,44 @@ const service = useLoaderData();
     };
 
     return (
-        <div className="max-w-4xl mx-auto p-4">
+        <div className="max-w-4xl mx-auto p-4 bg-white dark:bg-gray-900 rounded-lg shadow-md">
             <div className="flex flex-col md:flex-row gap-8 mb-8">
                 <div className="md:w-1/2">
                     <img 
                         src={image} 
                         alt={title} 
-                        className="w-full h-64 object-cover rounded-lg"
+                        className="w-full h-64 object-cover rounded-lg bg-gray-100 dark:bg-gray-800"
                     />
                 </div>
                 <div className="md:w-1/2">
-                    <h1 className="text-3xl font-bold mb-2">{title}</h1>
+                    <h1 className="text-3xl font-bold mb-2 text-gray-900 dark:text-gray-100">{title}</h1>
                     <div className="flex items-center mb-4">
                         <FaStar className="text-yellow-400 mr-1" />
-                        <span>{rating.toFixed(1)} ({reviews.length} {reviews.length === 1 ? 'review' : 'reviews'})</span>
+                        <span className="text-gray-700 dark:text-gray-200">{rating.toFixed(1)} ({reviews.length} {reviews.length === 1 ? 'review' : 'reviews'})</span>
                     </div>
-                    <p className="text-xl font-semibold mb-4">Price: ${price}</p>
-                    <p className="text-gray-600 mb-4">Category: {category}</p>
-                    <button className="btn btn-primary">Book Service</button>
+                    <p className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Price: ${price}</p>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">Category: {category}</p>
+                    <button className="btn btn-primary dark:bg-blue-700 dark:hover:bg-blue-800 dark:text-white">Book Service</button>
                 </div>
             </div>
 
             {/* Description */}
             <div className="mb-8">
-                <h2 className="text-2xl font-bold mb-4">Service Details</h2>
-                <p className="text-gray-700">{description}</p>
+                <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">Service Details</h2>
+                <p className="text-gray-700 dark:text-gray-200">{description}</p>
             </div>
 
 {/* Reviews Section */}
             <div>
-                <h2 className="text-2xl font-bold mb-4">Customer Reviews ({reviews?.length || 0})</h2>
+                <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">Customer Reviews ({reviews?.length || 0})</h2>
                 
                 {/* Add Review Form */}
                 {user ? (
-                    <div className="bg-gray-50 p-6 rounded-lg mb-8">
-                        <h3 className="text-xl font-semibold mb-4">Add Your Review</h3>
+                    <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg mb-8">
+                        <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Add Your Review</h3>
                         <form onSubmit={handleReviewSubmit}>
                             <div className="mb-4">
-                                <label className="block mb-2 font-medium">Your Rating</label>
+                                <label className="block mb-2 font-medium dark:text-gray-200">Your Rating</label>
                                 <ReactRating
                                     initialRating={newReview.rating}
                                     onChange={(value) => setNewReview({...newReview, rating: value})}
@@ -103,9 +103,9 @@ const service = useLoaderData();
                                 />
                             </div>
                             <div className="mb-4">
-                                <label className="block mb-2 font-medium">Your Review</label>
+                                <label className="block mb-2 font-medium dark:text-gray-200">Your Review</label>
                                 <textarea
-                                    className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                    className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:text-gray-100"
                                     rows="4"
                                     value={newReview.comment}
                                     onChange={(e) => setNewReview({...newReview, comment: e.target.value})}
@@ -115,7 +115,7 @@ const service = useLoaderData();
                             </div>
                             <button 
                                 type="submit" 
-                                className="btn btn-primary px-6 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+                                className="btn btn-primary px-6 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors dark:bg-blue-700 dark:hover:bg-blue-800 dark:text-white"
                                 disabled={!newReview.rating || !newReview.comment}
                             >
                                 Submit Review
@@ -123,7 +123,7 @@ const service = useLoaderData();
                         </form>
                     </div>
                 ) : (
-                    <div className="bg-blue-50 p-4 rounded-lg mb-8 text-blue-800">
+                    <div className="bg-blue-50 dark:bg-blue-900 p-4 rounded-lg mb-8 text-blue-800 dark:text-blue-200">
                         Please <button onClick={() => navigate('/login')} className="text-blue-600 font-medium hover:underline">login</button> to leave a review
                     </div>
                 )}
@@ -132,17 +132,17 @@ const service = useLoaderData();
                 {reviews?.length > 0 ? (
                     <div className="space-y-6">
                         {reviews.map((review, index) => (
-                            <div key={index} className="border-b pb-6 last:border-b-0">
+                            <div key={index} className="border-b pb-6 last:border-b-0 dark:border-gray-700">
                                 <div className="flex items-start mb-3">
                                     <img 
                                         src={review.userAvatar} 
                                         alt={review.userName} 
-                                        className="w-12 h-12 rounded-full mr-4 object-cover"
+                                        className="w-12 h-12 rounded-full mr-4 object-cover bg-gray-100 dark:bg-gray-800"
                                     />
                                     <div className="flex-1">
                                         <div className="flex justify-between items-start">
-                                            <h4 className="font-bold text-lg">{review.userName}</h4>
-                                            <span className="text-sm text-gray-500">
+                                            <h4 className="font-bold text-lg text-gray-900 dark:text-gray-100">{review.userName}</h4>
+                                            <span className="text-sm text-gray-500 dark:text-gray-300">
                                                 {new Date(review.date).toLocaleDateString('en-US', {
                                                     year: 'numeric',
                                                     month: 'long',
@@ -157,16 +157,16 @@ const service = useLoaderData();
                                                 emptySymbol={<FaStar className="text-gray-300" />}
                                                 fullSymbol={<FaStar className="text-yellow-400" />}
                                             />
-                                            <span className="ml-2 text-gray-600">{review.rating.toFixed(1)}</span>
+                                            <span className="ml-2 text-gray-600 dark:text-gray-300">{review.rating.toFixed(1)}</span>
                                         </div>
-                                        <p className="text-gray-700 mt-2">{review.comment}</p>
+                                        <p className="text-gray-700 dark:text-gray-200 mt-2">{review.comment}</p>
                                     </div>
                                 </div>
                             </div>
                         ))}
                     </div>
                 ) : (
-                    <div className="bg-gray-50 p-6 rounded-lg text-center text-gray-500">
+                    <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg text-center text-gray-500 dark:text-gray-300">
                         No reviews yet. Be the first to review!
                     </div>
                 )}

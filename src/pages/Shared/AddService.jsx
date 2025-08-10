@@ -80,21 +80,21 @@ const AddService = () => {
   ];
 
   return (
-    <div className="max-w-3xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-8">Add New Service</h1>
+    <div className=" mx-auto p-6 bg-white dark:bg-gray-900 rounded-lg shadow-md">
+      <h1 className="text-3xl font-bold mb-8 text-gray-900 dark:text-gray-100">Add New Service</h1>
       
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Service Image */}
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Service Image URL</span>
+            <span className="label-text dark:text-gray-200">Service Image URL</span>
           </label>
           <input
             type="url"
             name="image"
             value={serviceData.image}
             onChange={handleChange}
-            className="input input-bordered w-full"
+            className="input input-bordered w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-400 border dark:border-gray-700"
             placeholder="https://example.com/image.jpg"
             required
           />
@@ -103,14 +103,14 @@ const AddService = () => {
         {/* Service Title */}
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Service Title*</span>
+            <span className="label-text dark:text-gray-200">Service Title*</span>
           </label>
           <input
             type="text"
             name="title"
             value={serviceData.title}
             onChange={handleChange}
-            className="input input-bordered w-full"
+            className="input input-bordered w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-400 border dark:border-gray-700"
             placeholder="Professional Home Cleaning"
             required
           />
@@ -119,14 +119,14 @@ const AddService = () => {
         {/* Company Name */}
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Company Name*</span>
+            <span className="label-text dark:text-gray-200">Company Name*</span>
           </label>
           <input
             type="text"
             name="company"
             value={serviceData.company}
             onChange={handleChange}
-            className="input input-bordered w-full"
+            className="input input-bordered w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-400 border dark:border-gray-700"
             placeholder="Your Company Name"
             required
           />
@@ -135,14 +135,14 @@ const AddService = () => {
         {/* Website */}
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Company Website</span>
+            <span className="label-text dark:text-gray-200">Company Website</span>
           </label>
           <input
             type="url"
             name="website"
             value={serviceData.website}
             onChange={handleChange}
-            className="input input-bordered w-full"
+            className="input input-bordered w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-400 border dark:border-gray-700"
             placeholder="https://yourcompany.com"
           />
         </div>
@@ -150,13 +150,13 @@ const AddService = () => {
         {/* Description */}
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Description*</span>
+            <span className="label-text dark:text-gray-200">Description*</span>
           </label>
           <textarea
             name="description"
             value={serviceData.description}
             onChange={handleChange}
-            className="textarea textarea-bordered h-32"
+            className="textarea textarea-bordered h-32 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-400 border dark:border-gray-700"
             placeholder="Describe your service in detail..."
             required
           ></textarea>
@@ -165,13 +165,13 @@ const AddService = () => {
         {/* Category */}
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Category*</span>
+            <span className="label-text dark:text-gray-200">Category*</span>
           </label>
           <select
             name="category"
             value={serviceData.category}
             onChange={handleChange}
-            className="select select-bordered w-full"
+            className="select select-bordered w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border dark:border-gray-700"
             required
           >
             <option value="">Select a category</option>
@@ -184,14 +184,14 @@ const AddService = () => {
         {/* Price */}
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Price (USD)*</span>
+            <span className="label-text dark:text-gray-200">Price (USD)*</span>
           </label>
           <input
             type="number"
             name="price"
             value={serviceData.price}
             onChange={handleChange}
-            className="input input-bordered w-full"
+            className="input input-bordered w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-400 border dark:border-gray-700"
             placeholder="120"
             min="0"
             step="0.01"
@@ -202,7 +202,7 @@ const AddService = () => {
         <div className="form-control mt-8">
           <button 
             type="submit" 
-            className="btn btn-primary"
+            className="btn btn-primary dark:bg-blue-700 dark:hover:bg-blue-800 dark:text-white"
             disabled={loading}
           >
             {loading ? 'Adding Service...' : 'Add Service'}

@@ -10,13 +10,13 @@ const Services = ({ servicesPromise }) => {
   }, [servicesPromise]);
 
   return (
-    <div className="mt-6">
+    <div className="mt-6 bg-white dark:bg-gray-900 rounded-lg shadow-md py-8">
       <div className="text-center mb-8 px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl md:text-5xl font-bold mb-4"
+          className="text-3xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-gray-100"
         >
           Discover Our <span className="text-primary">Premium</span> Services
         </motion.h2>
@@ -24,7 +24,7 @@ const Services = ({ servicesPromise }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="max-w-2xl mx-auto text-base md:text-lg text-gray-600"
+          className="max-w-2xl mx-auto text-base md:text-lg text-gray-600 dark:text-gray-300"
         >
           Experience excellence with our carefully curated selection of services.
           Each offering is designed to deliver exceptional value and quality to

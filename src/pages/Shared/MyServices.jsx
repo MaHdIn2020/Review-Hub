@@ -77,20 +77,20 @@ const MyServices = () => {
   if (loading) return <p className="text-center mt-10">Loading services...</p>;
 
   return (
-    <div className="max-w-4xl mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-6">My Services</h2>
+    <div className=" mx-auto p-4 bg-white dark:bg-gray-900 rounded-lg shadow-md">
+      <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">My Services</h2>
 
       {myServices.length === 0 ? (
         <p>No services found. You haven't added any yet.</p>
       ) : (
         <div className="overflow-x-auto">
-          <table className="table w-full">
+          <table className="table w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
             <thead>
               <tr>
-                <th>Title</th>
-                <th>Category</th>
-                <th>Price ($)</th>
-                <th>Actions</th>
+                <th className="text-gray-900 dark:text-gray-100">Title</th>
+                <th className="text-gray-900 dark:text-gray-100">Category</th>
+                <th className="text-gray-900 dark:text-gray-100">Price ($)</th>
+                <th className="text-gray-900 dark:text-gray-100">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -117,23 +117,23 @@ const MyServices = () => {
       {/* Update Modal */}
       {selectedService && (
         <div className="modal modal-open">
-          <div className="modal-box">
+          <div className="modal-box bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
             <h3 className="text-lg font-bold mb-4">Update Service</h3>
             <form onSubmit={handleUpdateSubmit} className="space-y-3">
               <input
                 type="text"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-400 border dark:border-gray-700"
                 value={selectedService.title}
                 onChange={(e) => setSelectedService(prev => ({ ...prev, title: e.target.value }))}
               />
               <input
                 type="number"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-400 border dark:border-gray-700"
                 value={selectedService.price}
                 onChange={(e) => setSelectedService(prev => ({ ...prev, price: Number(e.target.value) }))}
               />
               <select
-                className="select select-bordered w-full"
+                className="select select-bordered w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border dark:border-gray-700"
                 value={selectedService.category}
                 onChange={(e) => setSelectedService(prev => ({ ...prev, category: e.target.value }))}
               >
@@ -144,7 +144,7 @@ const MyServices = () => {
                 <option value="Design">Design</option>
               </select>
               <div className="modal-action">
-                <button type="submit" className="btn btn-success">Update</button>
+                <button type="submit" className="btn btn-success dark:bg-green-700 dark:hover:bg-green-800 dark:text-white">Update</button>
                 <button type="button" className="btn" onClick={() => setSelectedService(null)}>Cancel</button>
               </div>
             </form>
@@ -155,11 +155,11 @@ const MyServices = () => {
       {/* Delete Modal */}
       {deleteId && (
         <div className="modal modal-open">
-          <div className="modal-box">
+          <div className="modal-box bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
             <h3 className="text-lg font-bold mb-3">Confirm Delete</h3>
             <p>Are you sure you want to delete this service?</p>
             <div className="modal-action">
-              <button className="btn btn-error" onClick={handleDelete}>Yes, Delete</button>
+              <button className="btn btn-error dark:bg-red-700 dark:hover:bg-red-800 dark:text-white" onClick={handleDelete}>Yes, Delete</button>
               <button className="btn" onClick={() => setDeleteId(null)}>Cancel</button>
             </div>
           </div>

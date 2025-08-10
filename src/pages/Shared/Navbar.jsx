@@ -2,10 +2,12 @@ import React, { use } from 'react';
 import { FaGrinStars } from "react-icons/fa";
 import { NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../../providers/AuthContext';
+import { useTheme } from '../../providers/ThemeContext';
 
 const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
   const navigate = useNavigate();
+  const { theme, toggleTheme } = useTheme();
 
   const handleSignOut = () => {
     signOutUser()
@@ -28,7 +30,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="w-full bg-white sticky top-0 z-50 shadow-sm">
+    <div className="w-full bg-white dark:bg-gray-900 sticky top-0 z-50 shadow-sm">
       <div className="navbar max-w-7xl mx-auto px-4">
         <div className="navbar-start">
           <div className="dropdown">
@@ -37,20 +39,37 @@ const Navbar = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
               </svg>
             </div>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-white rounded-box w-52">
+            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-white dark:bg-gray-900 rounded-box w-52">
               {navLinks}
             </ul>
           </div>
-          <NavLink to="/" className="btn btn-ghost normal-case text-xl font-bold text-primary flex items-center gap-2">
+          <NavLink to="/" className="btn btn-ghost normal-case text-xl font-bold text-primary dark:text-blue-300 flex items-center gap-2">
              ReviewHub
           </NavLink>
         </div>
 
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-primary">{navLinks}</ul>
+          <ul className="menu menu-horizontal px-1 text-primary dark:text-blue-300">{navLinks}</ul>
         </div>
 
         <div className="navbar-end gap-3">
+          {/* Theme Toggle Button */}
+          <button
+            className="btn btn-ghost btn-circle"
+            onClick={toggleTheme}
+            aria-label="Toggle Theme"
+            title="Toggle light/dark mode"
+          >
+            {theme === 'dark' ? (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m8.66-13.66l-.71.71M4.05 19.95l-.71.71M21 12h-1M4 12H3m16.66 4.95l-.71-.71M4.05 4.05l-.71-.71M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" />
+              </svg>
+            )}
+          </button>
           {user ? (
             <>
               <div className="dropdown dropdown-end">
@@ -59,7 +78,7 @@ const Navbar = () => {
                     <img alt="User Avatar" src={user.photoURL} />
                   </div>
                 </div>
-                <ul tabIndex={0} className="menu menu-sm dropdown-content bg-white rounded-box mt-3 w-52 p-2 shadow text-primary">
+                <ul tabIndex={0} className="menu menu-sm dropdown-content bg-white dark:bg-gray-900 rounded-box mt-3 w-52 p-2 shadow text-primary dark:text-blue-300">
                   <li><a>{user.displayName}</a></li>
                 </ul>
               </div>

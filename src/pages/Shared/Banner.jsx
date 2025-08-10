@@ -42,18 +42,18 @@ const Banner = () => {
               className="w-full h-full bg-cover bg-center relative"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
-              <div className="absolute inset-0  bg-opacity-50 flex items-center justify-center px-4">
+              <div className="absolute inset-0  bg-opacity-50 dark:bg-opacity-70 flex items-center justify-center px-4">
                 <div className="text-center max-w-4xl text-white">
                   <motion.h1
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="text-4xl md:text-5xl font-bold mb-4"
+                    className="text-4xl md:text-5xl font-bold mb-4 text-white dark:text-gray-100"
                   >
                     {slide.title}
                   </motion.h1>
-                  <p className="text-xl md:text-2xl mb-8">{slide.description}</p>
-                  <button className="btn btn-primary px-8 text-lg">
+                  <p className="text-xl md:text-2xl mb-8 text-white dark:text-gray-200">{slide.description}</p>
+                  <button className="btn btn-primary px-8 text-lg dark:bg-blue-700 dark:hover:bg-blue-800 dark:text-white">
                     {slide.cta}
                   </button>
                 </div>

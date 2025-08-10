@@ -3,8 +3,8 @@ import { FaGrinStars } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 shadow-inner w-full">
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-gray-700">
+    <footer className="bg-gray-50 dark:bg-gray-900 shadow-inner w-full text-gray-700 dark:text-gray-100">
+      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
         
         {/* Brand & Description */}
         <div>
@@ -19,7 +19,7 @@ const Footer = () => {
 
         {/* Quick Links */}
         <nav aria-label="Quick Links">
-          <h3 className="text-lg font-semibold mb-4 text-gray-900">Quick Links</h3>
+          <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">Quick Links</h3>
           <ul className="space-y-2">
             <li>
               <a href="/" className="link link-hover">Home</a>
@@ -38,7 +38,7 @@ const Footer = () => {
 
         {/* Support Links */}
         <nav aria-label="Support Links">
-          <h3 className="text-lg font-semibold mb-4 text-gray-900">Support</h3>
+          <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">Support</h3>
           <ul className="space-y-2">
             <li>
               <a href="/about" className="link link-hover">About Us</a>
@@ -57,14 +57,14 @@ const Footer = () => {
 
         {/* Social Media */}
         <div>
-          <h3 className="text-lg font-semibold mb-4 text-gray-900">Connect With Us</h3>
+          <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">Connect With Us</h3>
           <div className="flex space-x-6">
             <a
               href="https://twitter.com"
               aria-label="Twitter"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-blue-400 transition-colors duration-200"
+              className="text-gray-600 dark:text-gray-100 hover:text-blue-400 transition-colors duration-200"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +83,7 @@ const Footer = () => {
               aria-label="Facebook"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+              className="text-gray-600 dark:text-gray-100 hover:text-blue-600 transition-colors duration-200"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +102,7 @@ const Footer = () => {
               aria-label="Instagram"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-pink-500 transition-colors duration-200"
+              className="text-gray-600 dark:text-gray-100 hover:text-pink-500 transition-colors duration-200"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +116,7 @@ const Footer = () => {
               </svg>
             </a>
           </div>
-          <p className="mt-6 text-sm text-gray-500">&copy; 2024 ReviewHub. All rights reserved.</p>
+          <p className="mt-6 text-sm text-gray-500 dark:text-gray-300">&copy; 2024 ReviewHub. All rights reserved.</p>
         </div>
       </div>
     </footer>

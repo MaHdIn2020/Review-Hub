@@ -2,13 +2,13 @@ import React from 'react';
 
 const LoadingPage = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-base-100">
+    <div className="min-h-screen flex items-center justify-center bg-base-100 dark:bg-gray-900">
       <div className="text-center">
         {/* DaisyUI loading spinner */}
-        <span className="loading loading-spinner loading-lg text-primary"></span>
+        <span className="loading loading-spinner loading-lg text-primary dark:text-blue-400"></span>
         
         {/* Optional loading text */}
-        <h2 className="mt-4 text-xl font-semibold text-base-content">Loading Service Details...</h2>
+        <h2 className="mt-4 text-xl font-semibold text-base-content dark:text-gray-100">Loading Service Details...</h2>
         
         {/* Optional progress bar (alternative to spinner) */}
         {/* <progress className="progress progress-primary w-56 mt-4"></progress> */}

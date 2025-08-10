@@ -27,7 +27,7 @@ const CountupStats = () => {
   return (
     <section
       aria-label="Statistics on users, reviews, and services"
-      className="max-w-7xl mx-auto px-6 py-16"
+      className="max-w-7xl mx-auto px-6 py-16 bg-gray-50 dark:bg-gray-900"
     >
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
         {[
@@ -37,11 +37,11 @@ const CountupStats = () => {
         ].map(({ label, count }) => (
           <div
             key={label}
-            className="bg-white rounded-2xl shadow-lg p-8 flex flex-col justify-center"
+            className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 flex flex-col justify-center"
           >
-            <h3 className="text-3xl font-semibold mb-4 text-gray-900">{label}</h3>
+            <h3 className="text-3xl font-semibold mb-4 text-gray-900 dark:text-gray-100">{label}</h3>
             <p
-              className="text-5xl font-bold text-primary"
+              className="text-5xl font-bold text-primary dark:text-blue-400"
               aria-live="polite"
               aria-atomic="true"
             >

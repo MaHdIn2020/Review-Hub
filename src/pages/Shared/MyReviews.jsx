@@ -137,26 +137,26 @@ const MyReviews = () => {
   if (loading) return <p className="text-center mt-10">Loading your reviews...</p>;
 
   return (
-    <div className="max-w-3xl mx-auto p-6">
-      <h2 className="text-3xl font-bold mb-6 text-center">My Reviews</h2>
+    <div className=" mx-auto p-6 bg-white dark:bg-gray-900 rounded-lg shadow-md">
+      <h2 className="text-3xl font-bold mb-6 text-center text-gray-900 dark:text-gray-100">My Reviews</h2>
 
       {myReviews.length === 0 ? (
-        <p className="text-center text-gray-600">
+        <p className="text-center text-gray-600 dark:text-gray-300">
           You have not submitted any reviews yet.
         </p>
       ) : (
         myReviews.map((review) => (
           <div
             key={review._id}
-            className="bg-white shadow-md rounded-lg p-5 mb-5 border"
+            className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-5 mb-5 border dark:border-gray-700"
           >
-            <h3 className="text-xl font-semibold mb-2">
+            <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
               Service: {review.serviceTitle}
             </h3>
             <p>
               <strong>Rating:</strong> {review.rating} ⭐
             </p>
-            <p className="mt-2">
+            <p className="mt-2 text-gray-700 dark:text-gray-200">
               <strong>Review:</strong> {review.comment}
             </p>
             <div className="mt-4 flex space-x-3">
@@ -180,22 +180,22 @@ const MyReviews = () => {
       {/* Edit Modal */}
       {editData && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg shadow-lg p-6 max-w-md w-full relative">
-            <h3 className="text-xl font-bold mb-4">Edit Review</h3>
+          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6 max-w-md w-full relative">
+            <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">Edit Review</h3>
             <form onSubmit={handleUpdate} className="space-y-4">
               <div>
-                <label className="block font-semibold mb-1">
+                <label className="block font-semibold mb-1 dark:text-gray-200">
                   Service Title (read-only)
                 </label>
                 <input
                   type="text"
                   value={editData.serviceTitle}
                   disabled
-                  className="input input-bordered w-full cursor-not-allowed bg-gray-100"
+                  className="input input-bordered w-full cursor-not-allowed bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 border dark:border-gray-700"
                 />
               </div>
               <div>
-                <label className="block font-semibold mb-1">Rating (1 to 5)</label>
+                <label className="block font-semibold mb-1 dark:text-gray-200">Rating (1 to 5)</label>
                 <input
                   type="number"
                   min={1}
@@ -204,30 +204,30 @@ const MyReviews = () => {
                   onChange={(e) =>
                     setEditData((prev) => ({ ...prev, rating: e.target.value }))
                   }
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-400 border dark:border-gray-700"
                   required
                 />
               </div>
               <div>
-                <label className="block font-semibold mb-1">Review Comment</label>
+                <label className="block font-semibold mb-1 dark:text-gray-200">Review Comment</label>
                 <textarea
                   value={editData.comment}
                   onChange={(e) =>
                     setEditData((prev) => ({ ...prev, comment: e.target.value }))
                   }
-                  className="textarea textarea-bordered w-full"
+                  className="textarea textarea-bordered w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-400 border dark:border-gray-700"
                   required
                 />
               </div>
               <div className="flex justify-end space-x-3 mt-4">
                 <button
                   type="button"
-                  className="btn btn-outline"
+                  className="btn btn-outline dark:border-gray-600"
                   onClick={() => setEditData(null)}
                 >
                   Cancel
                 </button>
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="btn btn-primary dark:bg-blue-700 dark:hover:bg-blue-800 dark:text-white">
                   Save Changes
                 </button>
               </div>

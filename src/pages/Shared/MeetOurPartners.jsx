@@ -31,7 +31,7 @@ const partners = [
 
 const MeetOurPartners = () => {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -44,10 +44,10 @@ const MeetOurPartners = () => {
             <FaHandshake className="text-3xl" />
             <span>Strategic Collaborations</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight text-gray-900 dark:text-gray-100">
             Meet Our Trusted Partners
           </h2>
-          <p className="max-w-3xl mx-auto text-gray-600 text-lg">
+          <p className="max-w-3xl mx-auto text-gray-600 dark:text-gray-300 text-lg">
             We collaborate with industry leaders who share our commitment to excellence and innovation.
           </p>
         </motion.div>
@@ -60,7 +60,7 @@ const MeetOurPartners = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
               viewport={{ once: true, margin: "-50px" }}
-              className="bg-white rounded-2xl shadow-lg p-6 flex flex-col hover:shadow-xl transition-shadow duration-300"
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col hover:shadow-xl transition-shadow duration-300"
               role="group"
               aria-label={`Partner: ${partner.name}`}
             >
@@ -72,23 +72,15 @@ const MeetOurPartners = () => {
                   loading="lazy"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-center mb-4 text-gray-900">
+              <h3 className="text-xl font-semibold text-center mb-4 text-gray-900 dark:text-gray-100">
                 {partner.name}
               </h3>
-              <p className="text-gray-600 text-center flex-grow">{partner.description}</p>
-              <div className="mt-6 text-center">
-                <button
-                  type="button"
-                  className="btn btn-sm btn-outline btn-primary px-6 py-2"
-                  aria-label={`View partnership details with ${partner.name}`}
-                >
-                  View Partnership
-                </button>
-              </div>
+              <p className="text-gray-600 dark:text-gray-300 text-center flex-grow">{partner.description}</p>
             </motion.article>
           ))}
         </div>
 
+        {/* Replaced Button with Stats */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -96,16 +88,24 @@ const MeetOurPartners = () => {
           viewport={{ once: true }}
           className="text-center mt-20"
         >
-          <p className="text-xl mb-6 font-medium">
-            Interested in becoming a partner? Let's work together to achieve greatness.
+          <p className="text-xl mb-10 font-medium text-gray-900 dark:text-gray-100">
+            Together, we’ve built a network of innovation and trust.
           </p>
-          <button
-            type="button"
-            className="btn btn-primary px-12 py-3 text-lg font-semibold"
-            aria-label="Contact us to become a partner"
-          >
-            Contact Us
-          </button>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
+            <div>
+              <h4 className="text-4xl font-bold text-primary">25+</h4>
+              <p className="text-gray-600 dark:text-gray-300 mt-2">Active Partnerships</p>
+            </div>
+            <div>
+              <h4 className="text-4xl font-bold text-primary">10</h4>
+              <p className="text-gray-600 dark:text-gray-300 mt-2">Years of Collaboration</p>
+            </div>
+            <div>
+              <h4 className="text-4xl font-bold text-primary">15+</h4>
+              <p className="text-gray-600 dark:text-gray-300 mt-2">Industries Served</p>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
